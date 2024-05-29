@@ -1,0 +1,20 @@
+PODS:
+  - Kingfisher (7.11.0)
+  - Toast (4.1.1)
+
+DEPENDENCIES:
+  - Kingfisher
+  - Toast
+
+SPEC REPOS:
+  trunk:
+    - Kingfisher
+    - Toast
+
+SPEC CHECKSUMS:
+  Kingfisher: b9c985d864d43515f404f1ef4a8ce7d802ace3ac
+  Toast: 1f5ea13423a1e6674c4abdac5be53587ae481c4e
+
+PODFILE CHECKSUM: 14f42a49aecf805569a9b823eb6a0d03ed72ed60
+
+COCOAPODS: 1.15.2

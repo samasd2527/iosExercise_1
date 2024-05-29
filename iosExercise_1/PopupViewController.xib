@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopupViewController" customModule="iosExercise_1" customModuleProvider="target">
+            <connections>
+                <outlet property="backView" destination="PSX-69-hzY" id="XPw-kH-siC"/>
+                <outlet property="popupView" destination="ouD-a2-A4r" id="CQe-68-Zhh"/>
+                <outlet property="popupViewLabel" destination="Fr0-nu-z2m" id="Yhs-ZF-kHT"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PSX-69-hzY" userLabel="backView">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="Abt-Dq-UAA" appends="YES" id="eJ9-Lk-grh"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ouD-a2-A4r">
+                    <rect key="frame" x="36.666666666666657" y="316" width="320" height="220"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fr0-nu-z2m">
+                            <rect key="frame" x="139" y="19.666666666666686" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eQ-g5-bhh">
+                            <rect key="frame" x="30" y="55.6666666666667" width="120" height="149.33333333333337"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" title="旅店資訊" cornerStyle="small">
+                                <color key="baseForegroundColor" systemColor="labelColor"/>
+                                <color key="baseBackgroundColor" red="1" green="0.83529411760000005" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="hotelInfo:" destination="-1" eventType="touchUpInside" id="MFb-65-fnA"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drg-gU-dG3">
+                            <rect key="frame" x="170" y="55.6666666666667" width="120" height="149.33333333333337"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" title="旅店導航" cornerStyle="small">
+                                <color key="baseForegroundColor" systemColor="labelColor"/>
+                                <color key="baseBackgroundColor" red="1" green="0.83529411760000005" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="hotelNavigation:" destination="-1" eventType="touchUpInside" id="Zwr-fk-is4"/>
+                            </connections>
+                        </button>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgQ-4k-Kb7">
+                            <rect key="frame" x="30" y="71.666666666666686" width="120" height="101.33333333333331"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="house.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IH7-tM-hri">
+                                    <rect key="frame" x="0.0" y="-0.3333333333333357" width="120" height="100.66666666666666"/>
+                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="IH7-tM-hri" secondAttribute="bottom" id="15E-dx-hvq"/>
+                                <constraint firstAttribute="trailing" secondItem="IH7-tM-hri" secondAttribute="trailing" id="3b4-W4-Nfk"/>
+                                <constraint firstItem="IH7-tM-hri" firstAttribute="top" secondItem="FgQ-4k-Kb7" secondAttribute="top" id="8s5-Fb-wQD"/>
+                                <constraint firstItem="IH7-tM-hri" firstAttribute="leading" secondItem="FgQ-4k-Kb7" secondAttribute="leading" id="xoK-g9-EOY"/>
+                            </constraints>
+                        </view>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wta-0U-w97">
+                            <rect key="frame" x="170" y="71.666666666666686" width="120" height="101.33333333333331"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="map.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="d63-fz-44T">
+                                    <rect key="frame" x="0.0" y="1" width="120" height="99.333333333333329"/>
+                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="d63-fz-44T" firstAttribute="leading" secondItem="Wta-0U-w97" secondAttribute="leading" id="3KK-E6-31M"/>
+                                <constraint firstAttribute="trailing" secondItem="d63-fz-44T" secondAttribute="trailing" id="AyV-df-YoG"/>
+                                <constraint firstAttribute="bottom" secondItem="d63-fz-44T" secondAttribute="bottom" id="Svi-B1-7RD"/>
+                                <constraint firstItem="d63-fz-44T" firstAttribute="top" secondItem="Wta-0U-w97" secondAttribute="top" id="ftM-9H-3Kj"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.33333333333333331" green="0.81176470588235294" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="drg-gU-dG3" secondAttribute="trailing" constant="30" id="1IN-Rk-u1k"/>
+                        <constraint firstAttribute="trailing" secondItem="4eQ-g5-bhh" secondAttribute="trailing" constant="170" id="53J-mZ-80Y"/>
+                        <constraint firstAttribute="bottom" secondItem="drg-gU-dG3" secondAttribute="bottom" constant="15" id="AVE-o7-87S"/>
+                        <constraint firstItem="drg-gU-dG3" firstAttribute="top" secondItem="Fr0-nu-z2m" secondAttribute="bottom" constant="15" id="DdE-kz-U1M"/>
+                        <constraint firstItem="drg-gU-dG3" firstAttribute="top" secondItem="Fr0-nu-z2m" secondAttribute="bottom" constant="15" id="EaH-3A-UHr"/>
+                        <constraint firstItem="Fr0-nu-z2m" firstAttribute="centerY" secondItem="ouD-a2-A4r" secondAttribute="centerY" constant="-80" id="Gef-92-b2H"/>
+                        <constraint firstAttribute="trailing" secondItem="Wta-0U-w97" secondAttribute="trailing" constant="30" id="JLa-FZ-4VZ"/>
+                        <constraint firstAttribute="bottom" secondItem="drg-gU-dG3" secondAttribute="bottom" constant="15" id="JpQ-5y-ykJ"/>
+                        <constraint firstItem="Wta-0U-w97" firstAttribute="leading" secondItem="4eQ-g5-bhh" secondAttribute="trailing" constant="20" id="LTg-T4-hSU"/>
+                        <constraint firstAttribute="bottom" secondItem="4eQ-g5-bhh" secondAttribute="bottom" constant="15" id="MAm-k9-Si0"/>
+                        <constraint firstAttribute="height" constant="220" id="Nv3-H0-nlG"/>
+                        <constraint firstItem="4eQ-g5-bhh" firstAttribute="top" secondItem="Fr0-nu-z2m" secondAttribute="bottom" constant="15" id="RYT-Im-7a5"/>
+                        <constraint firstItem="drg-gU-dG3" firstAttribute="leading" secondItem="4eQ-g5-bhh" secondAttribute="trailing" constant="20" id="Xp8-dx-XZO"/>
+                        <constraint firstItem="Wta-0U-w97" firstAttribute="centerY" secondItem="FgQ-4k-Kb7" secondAttribute="centerY" id="YEG-NN-k1L"/>
+                        <constraint firstItem="Fr0-nu-z2m" firstAttribute="centerX" secondItem="ouD-a2-A4r" secondAttribute="centerX" id="Zdp-9E-JVr"/>
+                        <constraint firstItem="4eQ-g5-bhh" firstAttribute="leading" secondItem="ouD-a2-A4r" secondAttribute="leading" constant="30" id="aLR-bw-3Ft"/>
+                        <constraint firstItem="Wta-0U-w97" firstAttribute="top" secondItem="Fr0-nu-z2m" secondAttribute="bottom" constant="31.329999999999998" id="cZL-Gh-APT"/>
+                        <constraint firstAttribute="bottom" secondItem="Wta-0U-w97" secondAttribute="bottom" constant="47" id="cnE-7n-q84"/>
+                        <constraint firstItem="FgQ-4k-Kb7" firstAttribute="top" secondItem="Fr0-nu-z2m" secondAttribute="bottom" constant="31.329999999999998" id="eEB-5f-qKP"/>
+                        <constraint firstItem="drg-gU-dG3" firstAttribute="leading" secondItem="FgQ-4k-Kb7" secondAttribute="trailing" constant="20" id="h4c-Ay-Spl"/>
+                        <constraint firstItem="drg-gU-dG3" firstAttribute="leading" secondItem="4eQ-g5-bhh" secondAttribute="trailing" constant="20" id="kjU-yc-6tN"/>
+                        <constraint firstItem="FgQ-4k-Kb7" firstAttribute="leading" secondItem="ouD-a2-A4r" secondAttribute="leading" constant="30" id="tYu-K8-Q17"/>
+                        <constraint firstAttribute="bottom" secondItem="FgQ-4k-Kb7" secondAttribute="bottom" constant="47" id="v4A-OJ-90p"/>
+                        <constraint firstAttribute="width" constant="320" id="yWJ-42-vPD"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBrownColor"/>
+            <constraints>
+                <constraint firstItem="ouD-a2-A4r" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="88F-tQ-T07"/>
+                <constraint firstItem="PSX-69-hzY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="DxU-Z2-UYR"/>
+                <constraint firstItem="PSX-69-hzY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dea-lJ-sWG"/>
+                <constraint firstAttribute="bottom" secondItem="PSX-69-hzY" secondAttribute="bottom" id="eU7-fM-Gok"/>
+                <constraint firstItem="PSX-69-hzY" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="pzz-ub-uBX"/>
+                <constraint firstItem="ouD-a2-A4r" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="zCe-Hm-Dwa"/>
+            </constraints>
+            <point key="canvasLocation" x="46.564885496183201" y="-11.267605633802818"/>
+        </view>
+        <tapGestureRecognizer id="Abt-Dq-UAA">
+            <connections>
+                <action selector="dismissView:" destination="-1" id="Xfn-Ug-5CS"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="map.fill" catalog="system" width="128" height="110"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
