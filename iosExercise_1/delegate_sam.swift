@@ -8,12 +8,16 @@
 import Foundation
 import MapKit
 
-protocol ViewController2ClearHistoryDelegate: AnyObject {
-    func didClearHistory(_ data: [Hotel])
-}
-
 protocol PopupViewControllerDelegate: AnyObject {
     func navigateToDestination(_ destinationCoordinate: CLLocationCoordinate2D)
     func showHotelDetails(_ hotel: Hotel)
     func deselectAn()
+}
+
+protocol searchHistoryViewDelegate: AnyObject {
+    func didClearHistory(_ data: [Hotel])
+}
+
+protocol SearchResultsViewDelegate: AnyObject {
+    func didSelectHotel(_ matchingHotel: Hotel)
 }

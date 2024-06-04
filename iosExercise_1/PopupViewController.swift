@@ -71,7 +71,6 @@ class PopupViewController: UIViewController , MKMapViewDelegate {
         }
     }
     
-
     
     func appear(sender: ViewController) {
         sender.present(self, animated: false) {

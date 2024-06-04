@@ -51,7 +51,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="搜尋紀錄"/>
                                 <connections>
-                                    <segue destination="OHD-03-fI8" kind="show" identifier="searchHistoryID" id="9ja-ri-nLa"/>
+                                    <action selector="searchHistoryBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Gy-KG-0nQ"/>
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aKg-5w-bgv">
@@ -311,61 +311,9 @@
             </objects>
             <point key="canvasLocation" x="461.83206106870227" y="879.57746478873241"/>
         </scene>
-        <!--搜尋紀錄-->
-        <scene sceneID="raP-Vb-tLE">
-            <objects>
-                <viewController id="OHD-03-fI8" customClass="ViewController2" customModule="iosExercise_1" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TQv-lM-ScQ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dQC-uU-S85">
-                                <rect key="frame" x="0.0" y="103" width="393" height="655"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="lYh-KQ-rxi">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="44.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lYh-KQ-rxi" id="PdH-RQ-eUI">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="44.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdy-3L-OoT">
-                                <rect key="frame" x="16" y="758" width="361" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="清除紀錄"/>
-                                <connections>
-                                    <action selector="clearHistoryBtn:" destination="OHD-03-fI8" eventType="touchUpInside" id="80T-fu-K41"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="ewc-Gs-F03"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="ewc-Gs-F03" firstAttribute="bottom" secondItem="Bdy-3L-OoT" secondAttribute="bottom" constant="25" id="7hq-ef-fNM"/>
-                            <constraint firstItem="dQC-uU-S85" firstAttribute="trailing" secondItem="ewc-Gs-F03" secondAttribute="trailing" id="BWQ-kP-mRA"/>
-                            <constraint firstItem="dQC-uU-S85" firstAttribute="top" secondItem="ewc-Gs-F03" secondAttribute="top" id="LaK-Rl-wHL"/>
-                            <constraint firstItem="ewc-Gs-F03" firstAttribute="trailing" secondItem="Bdy-3L-OoT" secondAttribute="trailing" constant="16" id="Tef-eP-OCX"/>
-                            <constraint firstItem="Bdy-3L-OoT" firstAttribute="top" secondItem="dQC-uU-S85" secondAttribute="bottom" id="UXq-H3-dWP"/>
-                            <constraint firstItem="dQC-uU-S85" firstAttribute="leading" secondItem="ewc-Gs-F03" secondAttribute="leading" id="pUc-rz-YPK"/>
-                            <constraint firstItem="Bdy-3L-OoT" firstAttribute="leading" secondItem="ewc-Gs-F03" secondAttribute="leading" constant="16" id="w5K-ME-6k0"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="搜尋紀錄" id="egg-Xb-nUv"/>
-                    <connections>
-                        <outlet property="tableView1" destination="dQC-uU-S85" id="OBP-px-E4q"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bDz-x5-P9J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="441.98473282442745" y="162.67605633802819"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="star.fill" catalog="system" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

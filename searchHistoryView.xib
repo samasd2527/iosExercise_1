@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="searchHistoryView" customModule="iosExercise_1" customModuleProvider="target">
+            <connections>
+                <outlet property="backView" destination="OFJ-Xs-zn9" id="pCv-hZ-hpm"/>
+                <outlet property="popupView" destination="OdG-qq-Gzc" id="A46-ke-lmN"/>
+                <outlet property="tableView1" destination="RPg-OH-dV9" id="5vI-wQ-h3b"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OFJ-Xs-zn9" userLabel="backView">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemBrownColor"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="95X-Yg-Dhw" appends="YES" id="LCL-z0-ilC"/>
+                        <outletCollection property="gestureRecognizers" destination="g0W-hg-WEy" appends="YES" id="O3u-4H-3xA"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OdG-qq-Gzc">
+                    <rect key="frame" x="56.666666666666657" y="266" width="280" height="320"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NwB-qh-WZ8">
+                            <rect key="frame" x="175.66666666666669" y="280.66666666666663" width="89.333333333333314" height="34.333333333333314"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" title="清除紀錄">
+                                <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="16"/>
+                                <color key="baseForegroundColor" systemColor="labelColor"/>
+                                <color key="baseBackgroundColor" red="0.33333333329999998" green="0.81176470590000005" blue="0.67843137249999996" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="clearHistoryBtn:" destination="-1" eventType="touchUpInside" id="RJf-n5-CJA"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="搜尋紀錄" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTV-a0-Ufo">
+                            <rect key="frame" x="103" y="10.000000000000002" width="73.666666666666686" height="21.666666666666671"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RPg-OH-dV9">
+                            <rect key="frame" x="0.0" y="39.666666666666686" width="275" height="233"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="nTV-a0-Ufo" firstAttribute="top" secondItem="OdG-qq-Gzc" secondAttribute="top" constant="10" id="0Fi-Ur-jc4"/>
+                        <constraint firstItem="NwB-qh-WZ8" firstAttribute="top" secondItem="RPg-OH-dV9" secondAttribute="bottom" constant="8" symbolic="YES" id="1n2-af-qaf"/>
+                        <constraint firstItem="nTV-a0-Ufo" firstAttribute="centerX" secondItem="OdG-qq-Gzc" secondAttribute="centerX" id="CW9-RK-XHV"/>
+                        <constraint firstAttribute="height" constant="320" id="X8B-2S-WAz"/>
+                        <constraint firstAttribute="trailing" secondItem="NwB-qh-WZ8" secondAttribute="trailing" constant="15" id="XW6-Yl-7yR"/>
+                        <constraint firstAttribute="width" constant="280" id="Ydt-RD-7vg"/>
+                        <constraint firstItem="RPg-OH-dV9" firstAttribute="top" secondItem="nTV-a0-Ufo" secondAttribute="bottom" constant="8" symbolic="YES" id="cOu-w4-0h9"/>
+                        <constraint firstAttribute="bottom" secondItem="NwB-qh-WZ8" secondAttribute="bottom" constant="5" id="g3a-AU-vl7"/>
+                        <constraint firstItem="RPg-OH-dV9" firstAttribute="leading" secondItem="OdG-qq-Gzc" secondAttribute="leading" id="x0z-Zo-rYZ"/>
+                        <constraint firstAttribute="trailing" secondItem="RPg-OH-dV9" secondAttribute="trailing" constant="5" id="zNR-06-iNi"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBrownColor"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="OdG-qq-Gzc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1La-As-S5a"/>
+                <constraint firstItem="OdG-qq-Gzc" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="oMj-zP-3DM"/>
+            </constraints>
+            <point key="canvasLocation" x="46.564885496183201" y="-11.267605633802818"/>
+        </view>
+        <tapGestureRecognizer id="95X-Yg-Dhw">
+            <connections>
+                <action selector="dismissView:" destination="-1" id="nSb-DV-pfd"/>
+            </connections>
+        </tapGestureRecognizer>
+        <swipeGestureRecognizer direction="right" id="g0W-hg-WEy">
+            <connections>
+                <action selector="swapDownView:" destination="-1" id="COu-Lm-OUt"/>
+            </connections>
+        </swipeGestureRecognizer>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

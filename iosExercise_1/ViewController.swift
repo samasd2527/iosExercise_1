@@ -27,19 +27,14 @@ struct Results: Decodable {
     let content: [Hotel]
 }
 
-
 class ViewController: UIViewController{
 
     var myData : ApiResponse?
     var selectedAnnotation: MKAnnotation?
     var searchHistory: [Hotel] = []
-    var searchHistoryNames: [String] {
-        return searchHistory.map { $0.name }
-    }
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var searchTextField: UITextField!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -128,63 +123,56 @@ class ViewController: UIViewController{
     @IBAction func searchBtn(_ sender: UIButton) {
          performSearch()
      }
-
-     func performSearch() {
-         searchTextField.resignFirstResponder()
-         guard let searchText = searchTextField.text, !searchText.isEmpty else {
-             print("請輸入搜尋內容")
-             return
-         }
-
-         guard let hotels = myData?.results.content else {
-             self.view.makeToast("查無結果")
-             return
-         }
-
-         let matchingHotels = hotels.filter { $0.name.contains(searchText) || $0.vicinity.contains(searchText) }
-         
-         if let matchingHotel = matchingHotels.first {
-             print("匹配酒店: \(matchingHotel.name)")
-             let searchAnnotation = MKPointAnnotation()
-             searchAnnotation.coordinate = CLLocationCoordinate2D(latitude: matchingHotel.lat, longitude: matchingHotel.lng)
-             mapView.setCenter(searchAnnotation.coordinate, animated: true)
-             mapView.setRegion(MKCoordinateRegion(center: searchAnnotation.coordinate, latitudinalMeters: 100, longitudinalMeters: 100), animated: true)
-             updateSearchHistory(with: matchingHotel)
-         } else {
-             self.view.makeToast("查無結果")
-         }
-     }
     
-    func updateSearchHistory(with hotel: Hotel) {
-         if let index = searchHistory.firstIndex(where: { $0.name == hotel.name && $0.vicinity == hotel.vicinity }) {
-             searchHistory.remove(at: index)
-         }
-        searchHistory.insert(hotel, at: 0)
-     }
-
-    
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "searchHistoryID" {
-            if !searchHistory.isEmpty {
-                return true
-            }
-            else{
-                self.view.makeToast("無歷史紀錄")
-                return false
-            }
+    @IBAction func searchHistoryBtn(_ sender: UIButton) {
+        if !searchHistory.isEmpty {
+            let PopupView = searchHistoryView()
+            PopupView.searchHistory = searchHistory
+            PopupView.delegate = self
+            PopupView.appear(sender: self)
         }
-        self.view.makeToast("無歷史紀錄")
-        return false
+        else{
+            self.view.makeToast("無歷史紀錄")
+        }
+
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "searchHistoryID" {
-                if let destinationController = segue.destination as? ViewController2 {
-                    destinationController.searchHistoryTable = searchHistoryNames
-                    destinationController.delegate = self
-                }
+    func performSearch() {
+        searchTextField.resignFirstResponder()
+        guard let searchText = searchTextField.text, !searchText.isEmpty else {
+            print("請輸入搜尋內容")
+            return
+        }
+
+        guard let hotels = myData?.results.content else {
+            self.view.makeToast("查無結果")
+            return
+        }
+
+        let matchingHotels = hotels.filter { $0.name.contains(searchText) || $0.vicinity.contains(searchText) }
+
+        var matchingHotelsArray: [Hotel] = []
+        if !matchingHotels.isEmpty {
+            for hotel in matchingHotels {
+                matchingHotelsArray.append(hotel)
             }
-     }
+            let PopupView = SearchResultsView()
+            PopupView.searchResults = matchingHotelsArray
+            PopupView.delegate = self
+            PopupView.appear(sender: self)
+        }else {
+            self.view.makeToast("查無結果")
+        }
+    }
+    
+    func updateSearchHistory(with hotel: Hotel) {
+        if let index = searchHistory.firstIndex(where: { $0.name == hotel.name && $0.vicinity == hotel.vicinity }) {
+            searchHistory.remove(at: index)
+        }
+        searchHistory.insert(hotel, at: 0)
+        print(searchHistory)
+    }
+
 }
 
 extension ViewController: MKMapViewDelegate {
@@ -222,15 +210,23 @@ extension ViewController: MKMapViewDelegate {
             selectedAnnotation = nil
         }
     }
-    
-
-
 }
 
-extension ViewController: ViewController2ClearHistoryDelegate{
+extension ViewController: searchHistoryViewDelegate{
     func didClearHistory(_ data: [Hotel]) {
         searchHistory = data
         self.view.makeToast("已清除紀錄")
+    }
+    
+}
+
+extension ViewController: SearchResultsViewDelegate{
+    func didSelectHotel(_ matchingHotel: Hotel) {
+        let searchAnnotation = MKPointAnnotation()
+        searchAnnotation.coordinate = CLLocationCoordinate2D(latitude: matchingHotel.lat, longitude: matchingHotel.lng)
+        mapView.setCenter(searchAnnotation.coordinate, animated: true)
+        mapView.setRegion(MKCoordinateRegion(center: searchAnnotation.coordinate, latitudinalMeters: 100, longitudinalMeters: 100), animated: true)
+        updateSearchHistory(with: matchingHotel)
     }
     
 }

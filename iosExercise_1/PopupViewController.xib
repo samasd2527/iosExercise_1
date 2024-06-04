@@ -27,6 +27,7 @@
                     <gestureRecognizers/>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="Abt-Dq-UAA" appends="YES" id="eJ9-Lk-grh"/>
+                        <outletCollection property="gestureRecognizers" destination="oz0-Vo-T6s" appends="YES" id="acS-fT-KDd"/>
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ouD-a2-A4r">
@@ -139,6 +140,11 @@
                 <action selector="dismissView:" destination="-1" id="Xfn-Ug-5CS"/>
             </connections>
         </tapGestureRecognizer>
+        <swipeGestureRecognizer direction="right" id="oz0-Vo-T6s">
+            <connections>
+                <action selector="swapDownView:" destination="-1" id="bWX-Dr-td4"/>
+            </connections>
+        </swipeGestureRecognizer>
     </objects>
     <resources>
         <image name="house.fill" catalog="system" width="128" height="104"/>
